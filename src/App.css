@@ -1,0 +1,74 @@
+#root {
+  margin: 0 auto;
+  width: 90vw;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-color: gray;
+}
+
+.songStyle {
+  background-color: pink;
+  border: 4px solid green;
+  border-radius: 8px;
+  text-align: left;
+  color: black;
+  padding-left: 10px;
+}
+
+.yearStyle {
+  font-style: italic;
+  font-size: small;
+}
+
+.podStyle {
+  background-color: beige;
+  border: 4px dotted purple;
+  border-radius: 8px;
+  text-align: left;
+  color: black;
+  padding: 10px;
+}
+
+.epiStyle {
+  font-style: italic;
+  font-size: small;
+}
+
+.audioItemStyle {
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.status {
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.nextButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nextButtonImg {
+  width: 24px; 
+  height: 24px; 
+  transition: transform 0.2s ease-in-out;
+}
+
+.controls {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+  margin-top: 10px;
+  padding-bottom: 15px;
+}
