@@ -8,7 +8,7 @@ import Pause from './Pause';
 import Play from './Play';
 import Shuffle from './Shuffle';
 
-function App() {
+export default function App() {
   const [playlistData, setPlaylistData] = useState([]);
   const [currentAudioIndex, setCurrentAudioIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -103,5 +103,3 @@ function App() {
     </>
   )
 };
-
-export default App;
