@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Song({ title, artist, year }) {
+export default function Song({ title = "Unknown Title", artist = "Unknown Artist", year = "Unknown Year" }) {
     return (
         <div className="songStyle">
             <h4>{ title }</h4>

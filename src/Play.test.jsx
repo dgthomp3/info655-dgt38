@@ -1,4 +1,7 @@
+import React from "react";
+import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from "@testing-library/react";
+import { vi } from "vitest"; 
 import Play from "./Play";
 
 describe("Play Component", () => {
@@ -16,7 +19,7 @@ describe("Play Component", () => {
     });
 
     test("triggers onClick when the button is clicked", () => {
-        const mockOnClick = jest.fn();
+        const mockOnClick = vi.fn();
         render(<Play onClick={mockOnClick} />);
 
         const buttonElement = screen.getByRole("button");

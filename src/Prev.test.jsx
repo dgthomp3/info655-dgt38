@@ -1,4 +1,7 @@
+import React from "react";
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from "@testing-library/react";
+import { vi } from "vitest"; 
 import Prev from "./Prev";
 
 describe("Prev Component", () => {
@@ -14,7 +17,8 @@ describe("Prev Component", () => {
     });
 
     test("calls onClick when button is clicked", () => {
-        const mockOnClick = jest.fn();
+        const mockOnClick = vi.fn(); 
+
         render(<Prev onClick={mockOnClick} />);
 
         const buttonElement = screen.getByRole("button");

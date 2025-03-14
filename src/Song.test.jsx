@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import Song from "./Song";
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 
 describe("Song Component", () => {
     test("renders the song title, artist, and year correctly", () => {
@@ -30,7 +30,9 @@ describe("Song Component", () => {
     test("renders with missing props gracefully", () => {
         render(<Song />);
 
-        // Check that it still renders something even if props are missing
-        expect(screen.getByText(/undefined/i)).toBeInTheDocument();
+        // Check that it still renders default values when props are missing
+        expect(screen.getByText(/Unknown Title/i)).toBeInTheDocument();
+        expect(screen.getByText(/Unknown Artist/i)).toBeInTheDocument();
+        expect(screen.getByText(/Unknown Year/i)).toBeInTheDocument();
     });
 });

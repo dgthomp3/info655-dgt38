@@ -1,10 +1,13 @@
+import React from "react";
+import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from "@testing-library/react";
 import Playlist from "./Playlist";
 import Song from "./Song";
 import Podcast from "./Podcast";
+import { vi } from "vitest";
 
-jest.mock("./Song");
-jest.mock("./Podcast");
+vi.mock("./Song");
+vi.mock("./Podcast");
 
 describe("Playlist Component", () => {
     test("renders a list of songs and podcasts based on data", () => {
@@ -30,7 +33,7 @@ describe("Playlist Component", () => {
     });
 
     test("calls onDoubleClick with the correct item when a song or podcast is double-clicked", () => {
-        const mockOnDoubleClick = jest.fn();
+        const mockOnDoubleClick = vi.fn();
         const data = [
             { artist: "Artist 1", title: "Song 1", year: 2022 },
             { episodeTitle: "Podcast 1", episode: 1, season: 1 },

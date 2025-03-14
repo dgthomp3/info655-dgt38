@@ -1,3 +1,5 @@
+import React from "react";
+import '@testing-library/jest-dom';
 import { render, screen } from "@testing-library/react";
 import Podcast from "./Podcast";
 
@@ -23,13 +25,13 @@ describe("Podcast Component", () => {
         expect(episodeElement).toBeInTheDocument();
     });
 
-    test("applies the correct CSS classes to the title and episode span", () => {
+    test("applies the correct CSS class to the div", () => {
         render(<Podcast episodeTitle="React for Beginners" episode={3} season={1} />);
 
-        const titleElement = screen.getByText(/React for Beginners/i);
-        const episodeElement = screen.getByText(/S1E3/i);
+        const divElement = screen.getByText(/React for Beginners/i).parentElement; // Get the parent div of the title
+        expect(divElement).toHaveClass("podStyle");
 
-        expect(titleElement).toHaveClass("podStyle");
+        const episodeElement = screen.getByText(/S1E3/i);
         expect(episodeElement).toHaveClass("epiStyle");
     });
 });
